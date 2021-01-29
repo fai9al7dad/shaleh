@@ -1,18 +1,28 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div>
+    <v-container>
+      <h2 class="my-5 text-right">الشاليهات</h2>
+      <shaleh-card></shaleh-card>
+
+        <h2 class="my-7 text-right">الحجز</h2>
+      <shaleh-reservation></shaleh-reservation>
+    </v-container>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
+import shalehcard from '@/components/shalehcard';
+import reservation from '@/components/reservation';
 
 export default {
-  name: 'Home',
   components: {
-    HelloWorld
+    'shaleh-card': shalehcard,
+    'shaleh-reservation': reservation
+  },
+  data(){
+    return{
+
+    }
   }
 }
 </script>

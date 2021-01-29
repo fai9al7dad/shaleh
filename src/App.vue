@@ -1,32 +1,39 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <v-app>
+    <v-main>
+        <v-app-bar class="d-flex justify-center" color="white" dense>
+          <v-app-bar-title>{{shaleh.name}}</v-app-bar-title>
+        </v-app-bar>
+        <router-view></router-view>
+    </v-main> 
+  </v-app>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
+<script>
+import Home from '@/views/Home';
+export default {
+  name: 'App',
+  components:{
+    'home-page': Home
+  },
+  data(){
+    return{
+      shaleh:{
+        name: 'شاليه الافراح'
+      }
     }
   }
+}
+
+</script>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap');
+
+*{
+  font-family: 'Tajawal', sans-serif;
+}
+#app{
+  background:#fbfbfb;
 }
 </style>
